@@ -1,0 +1,31 @@
+<li data-ru="Эффективное использование ресурсов">Resource efficiency</li><li data-ru="Тайм-менеджмент">Time management</li><li data-ru="Быстрая обучаемость">Quick learner</li>
+    </ul>
+  </section>
+
+  <section id="languages">
+    <h2 data-ru="Языки">Languages</h2>
+    <div class="langs">
+      <div class="lang"><span data-ru="Казахский">Kazakh</span><span data-ru="Родной">Native</span></div>
+      <div class="lang"><span data-ru="Русский">Russian</span><span data-ru="Свободно">Fluent</span></div>
+      <div class="lang"><span>English</span><span data-ru="B1 · средний">B1 · Intermediate</span></div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap" id="contact">
+  <h2 data-ru="Контакты">Contact</h2>
+  <p><span data-ru="Почта:">Email:</span> <a href="mailto:dilnazyeraliyeva@gmail.com">dilnazyeraliyeva@gmail.com</a></p>
+  <p data-ru="Живу в Астане, Казахстан">Based in Astana, Kazakhstan</p>
+</footer>
+<script>
+const els=[...document.querySelectorAll("[data-ru]")];
+els.forEach(e=>e.dataset.en=e.innerHTML);
+function setLang(l){
+  els.forEach(e=>e.innerHTML=l==="ru"?e.dataset.ru:e.dataset.en);
+  document.documentElement.lang=l;
+  bEn.setAttribute("aria-pressed",l==="en");bRu.setAttribute("aria-pressed",l==="ru");
+}
+bEn.onclick=()=>setLang("en");bRu.onclick=()=>setLang("ru");
+</script>
+</body>
+</html>
